@@ -11,11 +11,6 @@
     <artifactId>app</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <java.version>21</java.version>
-        <kotlin.version>2.1.10</kotlin.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
