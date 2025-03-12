@@ -23,6 +23,36 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>native</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.graalvm.buildtools</groupId>
+                            <artifactId>native-maven-plugin</artifactId>
+                            <configuration>
+                                <buildArgs>
+                                    <arg>--color=always</arg>
+                                </buildArgs>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>build-native</id>
+                                    <goals>
+                                        <goal>compile-no-fork</goal>
+                                    </goals>
+                                    <phase>package</phase>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
+
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
